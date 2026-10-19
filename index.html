@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Malak Khatir – AI & Data | Full Stack Web & Mobile Developer | DevOps & Cloud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F7F4FC;--surface:#EDE8F8;--ink:#1B1432;--muted:#5E5679;--line:#D5CCEB;
+  --accent:#5B2BE0;--accent2:#08866A;--on-accent:#fff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;--bg:#120D22;--surface:#1D1535;--ink:#F2EEFF;--muted:#A89FC6;--line:#32274F;--accent:#9D7BFF;--accent2:#6FF0C6;--on-accent:#120D22;}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#120D22;--surface:#1D1535;--ink:#F2EEFF;--muted:#A89FC6;--line:#32274F;--accent:#9D7BFF;--accent2:#6FF0C6;--on-accent:#120D22;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;margin:0;line-height:1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;gap:1rem;flex-wrap:wrap}
+nav .logo{font:800 1.25rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:.4rem .9rem;font:inherit;cursor:pointer}
+/* hero */
+.hero{padding:clamp(2.5rem,8vw,6rem) 0 3rem}
+.hero h1{font-size:clamp(3.4rem,9.5vw,8rem);font-weight:800;letter-spacing:-.045em}
+.hero h1 span{display:block}
+.hero h1 span+span{color:transparent;-webkit-text-stroke:2px var(--accent)}
+.role{font:700 clamp(1.2rem,3vw,1.7rem)/1.25 "Bricolage Grotesque",sans-serif;margin:1.75rem 0 .75rem}
+.lead{max-width:34rem;color:var(--muted);margin:0 0 2rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:99px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .2s}
+#wave{display:block;width:100%;height:120px;margin-top:3.5rem}
+.focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:3rem}
+.focus>div{background:var(--surface);border-radius:20px;padding:1.3rem 1.4rem;border-left:4px solid var(--accent)}
+.focus h3{font-size:1.2rem;margin-bottom:.5rem}
+.focus p{margin:0;color:var(--muted);font-size:.95rem}
+/* sections */
+section{padding:clamp(3rem,8vw,6rem) 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:2.5rem}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:36rem}
+.facts{display:grid;gap:1rem;align-content:start}
+.fact{background:var(--surface);border-radius:20px;padding:1.2rem 1.4rem}
+.fact b{display:block;font:800 1.9rem "Bricolage Grotesque",sans-serif;color:var(--accent)}
+.fact span{color:var(--muted);font-size:.95rem}
+/* projects */
+.proj{border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj button{all:unset;box-sizing:border-box;display:flex;width:100%;align-items:center;justify-content:space-between;gap:1rem;padding:1.4rem .25rem;cursor:pointer}
+.proj button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.proj h3{font-size:clamp(1.35rem,3.4vw,2.2rem);font-weight:700;letter-spacing:-.02em;transition:color .2s,transform .3s}
+.proj button:hover h3{color:var(--accent);transform:translateX(8px)}
+.tag{color:var(--muted);font-size:.9rem;white-space:nowrap}
+.plus{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:1.4rem;transition:transform .3s,background .3s}
+.proj[data-open="true"] .plus{transform:rotate(45deg);background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.proj[data-open="true"] .body{grid-template-rows:1fr}
+.body>div{overflow:hidden}
+.body p{margin:0 0 1rem;max-width:42rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;padding-bottom:1.6rem;margin:0;list-style:none}
+.chips li{background:var(--surface);border-radius:99px;padding:.3rem .85rem;font-size:.9rem;font-weight:500}
+/* xp + skills */
+.xp{display:grid;gap:2rem}
+.job{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem}
+.job time{color:var(--muted);font-weight:500}
+.job h3{font-size:1.5rem;margin-bottom:.3rem}
+.job .where{color:var(--accent2);font-weight:600;margin:0 0 .6rem}
+.job ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.sk{background:var(--surface);border-radius:20px;padding:1.4rem}
+.sk h3{font-size:1.15rem;margin-bottom:.9rem}
+.sk .chips{padding:0}
+.sk .chips li{background:var(--bg)}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.edu h3{font-size:1.3rem;margin-bottom:1.2rem}
+.edu ul{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.edu li b{display:block;font-weight:600}.edu li span{color:var(--muted);font-size:.95rem}
+/* contact */
+.contact{text-align:left}
+.contact a.mail{font:800 clamp(1.5rem,5.4vw,4rem)/1.1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;text-decoration:none;color:var(--accent);word-break:break-word}
+.contact a.mail:hover{text-decoration:underline}
+.contact p{color:var(--muted);margin:1.5rem 0 0}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .about,.edu{grid-template-columns:1fr;gap:2rem}
+  .job{grid-template-columns:1fr;gap:.4rem}
+  .tag{display:none}
+  nav ul{gap:1rem;font-size:.95rem}
+}
+body{overflow-x:clip;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:28px 28px}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;top:-5rem;right:-8vw;width:38rem;max-width:90vw;aspect-ratio:1;background:radial-gradient(closest-side,var(--accent),transparent);opacity:.2;z-index:-1;pointer-events:none}
+.hero-top{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center}
+.code{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 24px 60px -24px var(--accent);transform:rotate(1.5deg)}
+.code .bar{display:flex;align-items:center;gap:.4rem;padding:.8rem 1rem;border-bottom:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.code .bar i{width:.7rem;height:.7rem;border-radius:50%;background:var(--line)}
+.code .bar i:first-child{background:var(--accent)}
+.code .bar span{margin-left:.6rem}
+.code pre{margin:0;padding:1.2rem 1.3rem;overflow-x:auto;font:500 .92rem/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.code .k{color:var(--accent)}.code .s{color:var(--accent2)}.code .c{color:var(--muted)}
+.proj button:hover{background:var(--surface)}
+.proj button{padding-left:.9rem;padding-right:.9rem;border-radius:14px}
+@media (max-width:900px){.hero-top{grid-template-columns:1fr}.code{transform:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Navigation principale">
+  <a class="logo" href="#top">MK</a>
+  <ul><li><a href="#projets">Projets</a></li><li><a href="#parcours">Parcours</a></li><li><a href="#competences">Compétences</a></li><li><a href="#contact">Contact</a></li><li><a href="https://github.com/malakkhatir" target="_blank" rel="noopener">GitHub</a></li></ul>
+  <button id="theme" type="button" aria-label="Changer de thème">Thème</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-top"><div><h1><span>Malak</span><span>Khatir</span></h1>
+  <p class="role">AI & Data | Full Stack Web & Mobile Developer | DevOps & Cloud</p>
+  <p class="lead">Je me spécialise en Système d’Information et Data Science : je conçois des applications web et mobiles de bout en bout, de la modélisation des données jusqu’au déploiement cloud. Je combine développement full stack, intelligence artificielle et pratiques DevOps pour bâtir des solutions fiables, évolutives et orientées données.</p>
+  <div class="btns">
+    <a class="btn main" href="#projets">Voir mes projets</a>
+    <a class="btn" href="#contact">Me contacter</a>
+  </div>
+  </div><aside class="code" aria-label="Aperçu du profil"><div class="bar"><i></i><i></i><i></i><span>malak.config.js</span></div><pre><code><span class="c">// profil</span>
+<span class="k">const</span> malak = {
+  <span class="k">role</span>: <span class="s">"AI &amp; Data"</span>,
+  <span class="k">fullStack</span>: [<span class="s">"React"</span>, <span class="s">"Laravel"</span>,
+    <span class="s">"Spring"</span>, <span class="s">"Angular"</span>],
+  <span class="k">mobile</span>: <span class="s">"React Native"</span>,
+  <span class="k">data</span>: [<span class="s">"ML"</span>, <span class="s">"Deep Learning"</span>,
+    <span class="s">"Power BI"</span>],
+  <span class="k">devOps</span>: [<span class="s">"Docker"</span>, <span class="s">"Kubernetes"</span>,
+    <span class="s">"CI/CD"</span>],
+  <span class="k">ouverteAuxOffres</span>: <span class="k">true</span>,
+};</code></pre></aside></div><div class="focus"><div><h3>AI & Data</h3><p>Machine learning, deep learning, Python, ERP, Power BI, systèmes d’information</p></div><div><h3>Full Stack Web & Mobile</h3><p>React, React Native, Laravel, Spring Boot, Angular, Express.js</p></div><div><h3>DevOps & Cloud</h3><p>Docker, Kubernetes, CI/CD, architecture microservices</p></div></div>
+  
+</header>
+
+<section id="apropos" class="about">
+  <div>
+    <h2>À propos</h2>
+    <p>Analytique et responsable, je cherche un poste à l’intersection du développement Full Stack, du DevOps et de la Data / IA, pour contribuer à des projets techniques ambitieux.</p>
+    <p>Je suis curieuse, j’aime le travail en équipe et je passe volontiers du front au back, des conteneurs Docker aux tableaux de bord.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>8</b><span>projets full stack réalisés</span></div>
+    <div class="fact"><b>4</b><span>certifications</span></div>
+    <div class="fact"><b>3 langues</b><span>arabe, français, anglais</span></div>
+  </div>
+</section>
+
+<section id="projets">
+  <h2>Projets</h2>
+  <div id="projects"></div>
+</section>
+
+<section id="parcours">
+  <h2>Parcours</h2>
+  <div class="xp">
+    <div class="job"><time>Nov. 2025 – Fév. 2026</time><div><h3>Réalisatrice son / monteuse</h3><p class="where">Radio Mars, stage pratique</p><ul><li>Mixage audio des émissions de nuit</li><li>Montage d’extraits de podcasts, insertion de flashs et jingles</li><li>Réalisation de flashs en faux direct en studio</li></ul></div></div>
+    
+    <div class="job"><time>Fév. 2025 – Mars 2025</time><div><h3>Stage d’application, développement d’un site de gestion de notifications</h3><p class="where">CNSS</p><ul><li>Site de gestion de notifications, front-end et back-end (Laravel, MySQL)</li><li>Modèle de données, gestion des statuts pour tracer chaque besoin</li><li>Tableau de bord en temps réel et gestion des droits administrateur</li></ul></div></div>
+  </div>
+</section>
+
+<section id="competences">
+  <h2>Compétences</h2>
+  <div class="skills" id="skills"></div>
+</section>
+
+<section id="formation" class="edu">
+  <div>
+    <h3>Formation</h3>
+    <ul>
+      <li><b>Master Système d’Information et Data Science</b><span>ENSAM, 2026 – présent</span></li>
+      <li><b>Licence pro Développement Full Stack & DevOps</b><span>FSAC Casablanca, 2025 – 2026</span></li>
+      <li><b>Technicien spécialisé en développement informatique, option Web Full Stack</b><span>OFPPT NTIC2, 2023 – 2025</span></li>
+      <li><b>Baccalauréat scientifique, Sciences Physiques</b><span>Lycée Mohammed 6, 2023 – 2024</span></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Certifications</h3>
+    <ul>
+      <li><b>Introduction to JEE</b><span>Coursera, 27 septembre 2026</span></li>
+      <li><b>Advanced React</b><span>Coursera, 28 août 2026</span></li>
+      <li><b>Python Certificate</b><span>Coursera, 28 juin 2026</span></li>
+      <li><b>Certified Fundamental Cybersecurity Practitioner</b><span>OFPPT NTIC2, mai – juillet 2025</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Travaillons ensemble</h2>
+  <a class="mail" href="mailto:malakhatir35@gmail.com">malakhatir35@gmail.com</a>
+  <p><a href="tel:+212679315781">+212 679 315 781</a> · Derb Sultan, Casablanca</p>
+  <div class="btns" style="margin-top:2rem"><a class="btn main" href="https://github.com/malakkhatir" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.linkedin.com/in/malak-khatir-4780b6346/" target="_blank" rel="noopener">LinkedIn</a></div>
+</section>
+<footer>© 2026 Malak Khatir</footer>
+</div>
+
+<script>
+var P=[
+["FitApp","Application mobile de fitness","API REST PHP avec authentification par token Bearer et application React Native / Expo. 60 exercices filtrables, 20 programmes à déblocage séquentiel, séances enregistrées, programmes personnalisés, favoris et badges. Graphiques de progression (IMC, calories), mode sombre et notifications locales.",["React Native","Expo","PHP 8","MySQL","AsyncStorage"]],
+["EduTrack","Plateforme de gestion scolaire (PFE)","Trois espaces (étudiant, enseignant, administrateur) avec détection automatique du rôle. Gestion des notes et absences, génération de PDF (attestations, bulletins) et mode sombre persistant.",["React 18","Laravel 12","Sanctum","Tailwind CSS","MySQL"]],
+["Microservices","Product / Order / Client","Trois services derrière une API Gateway Ocelot, avec registre Consul, messagerie asynchrone Kafka, une base dédiée par service, conteneurisation Docker et monitoring Prometheus.",[".NET Core 7","Kafka","Consul","Docker","Prometheus","MongoDB"]],
+["Réclamations client","Application e-commerce","Rôles client (créer et suivre ses réclamations) et agent (traitement, statuts Nouveau, En cours, Résolu). Filtres par statut et priorité, tableau de bord de suivi.",["Spring Boot","Spring Security JWT","Angular 18","Angular Material","MySQL"]],
+["Bank M’3ak","Application bancaire en ligne","Dépôt, retrait, virement et historique, avec validation des seuils et rôles administrateur / utilisateur. Interface pensée pour le marché marocain (DH).",["Laravel 11","React 18","Framer Motion","Tailwind CSS","MySQL"]],
+["Stock & commandes","Gestion multi-sites","Stock multi-dépôts, transferts inter-dépôts, commandes avec factures PDF automatiques et cinq rôles dédiés : admin, directeur des ventes, responsable de stock, vendeur, client.",["Laravel","React","MySQL","PDF"]],
+["Bibliothèque universitaire","Application full stack","Authentification multi-rôles, gestion des emprunts, pénalités automatiques, recommandations par IA, mode sombre / clair et API REST sécurisée.",["React","Laravel","MySQL","API REST"]],
+["Restaurant en ligne","Site de réservation (PFE)","Réservations, menu, avis et livraisons, avec des espaces dédiés aux clients, administrateurs, serveurs et livreurs.",["React","Laravel","MySQL","API REST"]]
+];
+var S=[["Langages","JavaScript,TypeScript,PHP,Python,Java"],["Frameworks","Angular,React.js,React Native,Express.js,Spring,Laravel,JEE"],["Web","HTML / CSS,Bootstrap,Tailwind CSS"],["Bases de données","MySQL,SQL,MongoDB,SQL Server"],["DevOps & outils","GitHub,Docker,Kubernetes,CI/CD,Cloud Native,Linux,Git,JIRA"],["Méthodes","SCRUM (Agile),UML,Algorithmique"]];
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h)e.innerHTML=h;return e}
+var box=document.getElementById("projects");
+P.forEach(function(p,i){
+  var d=el("div","proj");d.dataset.open="false";
+  var id="p"+i;
+  d.innerHTML='<button type="button" aria-expanded="false" aria-controls="'+id+'"><h3>'+p[0]+'</h3><span class="tag">'+p[1]+'</span><span class="plus" aria-hidden="true">+</span></button><div class="body" id="'+id+'"><div><p>'+p[2]+'</p><ul class="chips">'+p[3].map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul></div></div>';
+  var b=d.querySelector("button");
+  b.onclick=function(){var o=d.dataset.open!=="true";d.dataset.open=o;b.setAttribute("aria-expanded",o)};
+  box.appendChild(d);
+});
+box.firstChild.dataset.open="true";box.firstChild.querySelector("button").setAttribute("aria-expanded","true");
+var sk=document.getElementById("skills");
+S.forEach(function(s){sk.appendChild(el("div","sk","<h3>"+s[0]+'</h3><ul class="chips">'+s[1].split(",").map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"))});
+/* theme */
+var root=document.documentElement,tb=document.getElementById("theme");
+tb.onclick=function(){var dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;root.dataset.theme=dark?"light":"dark"};
+</script>
+</body>
+</html>
